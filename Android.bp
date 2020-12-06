@@ -1,0 +1,95 @@
+cc_prebuilt_library_shared {
+        name: "libavcodec",
+        target: {
+            android_arm: {
+                srcs: ["android/armv7-a/lib/libavcodec.so"],
+            },
+            android_arm64: {
+                srcs: ["android/armv8-a/lib/libavcodec.so"],
+            },
+        },
+        strip: {
+            none:true,
+        },
+}
+
+cc_prebuilt_library_shared {
+        name: "libavfilter",
+        target: {
+            android_arm: {
+                srcs: ["android/armv7-a/lib/libavfilter.so"],
+            },
+            android_arm64: {
+                srcs: ["android/armv8-a/lib/libavfilter.so"],
+            },
+        },
+        strip: {
+            none:true,
+        },
+}
+
+cc_prebuilt_library_shared {
+        name: "libavformat",
+        target: {
+            android_arm: {
+                srcs: ["android/armv7-a/lib/libavformat.so"],
+            },
+            android_arm64: {
+                srcs: ["android/armv8-a/lib/libavformat.so"],
+            },
+        },
+        strip: {
+            none:true,
+        },
+}
+
+cc_prebuilt_library_shared {
+        name: "libavutil",
+        target: {
+            android_arm: {
+                srcs: ["android/armv7-a/lib/libavutil.so"],
+            },
+            android_arm64: {
+                srcs: ["android/armv8-a/lib/libavutil.so"],
+            },
+        },
+        strip: {
+            none:true,
+        },
+}
+
+cc_prebuilt_library_shared {
+        name: "libswresample",
+        target: {
+            android_arm: {
+                srcs: ["android/armv7-a/lib/libswresample.so"],
+            },
+            android_arm64: {
+                srcs: ["android/armv8-a/lib/libswresample.so"],
+            },
+        },
+        strip: {
+            none:true,
+        },
+}
+
+cc_prebuilt_library_shared {
+        name: "libswscale",
+        target: {
+            android_arm: {
+                srcs: ["android/armv7-a/lib/libswscale.so"],
+            },
+            android_arm64: {
+                srcs: ["android/armv8-a/lib/libswscale.so"],
+            },
+        },
+        strip: {
+            none:true,
+        },
+}
+
+
+cc_library_headers {
+    name: "libffmpeg_headers",
+    export_include_dirs: ["android/armv8-a/include"],
+}
