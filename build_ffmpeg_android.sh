@@ -15,6 +15,12 @@ X264_LIBS_DIR=$(pwd)/libx264/android/$AOSP_ABI
 X264_PKG_PATH="$X264_LIBS_DIR/lib/pkgconfig"
 export PKG_CONFIG_PATH=$X264_PKG_PATH:$PKG_CONFIG_PATH
 
+########### aac
+AAC_LIBS_DIR=$(pwd)/fdk-aac/android/$AOSP_ABI
+AAC_PKG_PATH="$AAC_LIBS_DIR/lib/pkgconfig"
+export PKG_CONFIG_PATH=$AAC_PKG_PATH:$PKG_CONFIG_PATH
+
+echo $PKG_CONFIG_PATH
 
 function build_android
 {
@@ -29,6 +35,8 @@ echo "Compiling FFmpeg for $CPU and prefix is $PREFIX"
     --enable-jni \
     --enable-gpl \
     --enable-libx264 \
+    --enable-nonfree \
+    --enable-libfdk-aac \
     --disable-mediacodec \
     --disable-decoder=h264_mediacodec \
     --disable-static \

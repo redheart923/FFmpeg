@@ -1,7 +1,3 @@
-[submodule "libx264"]
-	path = libx264
-	url = https://code.videolan.org/videolan/x264.git
-	branch = stable
 [submodule "libx264/x264"]
 	path = libx264/x264
 	url = https://code.videolan.org/videolan/x264.git

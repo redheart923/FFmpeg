@@ -1,0 +1,9 @@
+.deps
+*.o
+*.Plo
+.dirstamp
+config.log
+config.status
+fdk-aac.pc
+libtool
+Makefile
