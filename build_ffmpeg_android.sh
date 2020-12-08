@@ -20,7 +20,12 @@ AAC_LIBS_DIR=$(pwd)/fdk-aac/android/$AOSP_ABI
 AAC_PKG_PATH="$AAC_LIBS_DIR/lib/pkgconfig"
 export PKG_CONFIG_PATH=$AAC_PKG_PATH:$PKG_CONFIG_PATH
 
-echo $PKG_CONFIG_PATH
+########### x265
+X265_LIBS_DIR=$(pwd)/libx265/android/$AOSP_ABI
+X265_PKG_PATH="$X265_LIBS_DIR/lib/pkgconfig"
+export PKG_CONFIG_PATH=$X265_PKG_PATH:$PKG_CONFIG_PATH
+
+echo @@@@pkgconfig:$PKG_CONFIG_PATH
 
 function build_android
 {
@@ -37,6 +42,7 @@ echo "Compiling FFmpeg for $CPU and prefix is $PREFIX"
     --enable-libx264 \
     --enable-nonfree \
     --enable-libfdk-aac \
+    --enable-libx265 \
     --disable-mediacodec \
     --disable-decoder=h264_mediacodec \
     --disable-static \
@@ -57,7 +63,8 @@ echo "Compiling FFmpeg for $CPU and prefix is $PREFIX"
     --enable-cross-compile \
     --sysroot=$SYSROOT \
     --extra-cflags="-Os -fpic $OPTIMIZE_CFLAGS " \
-    --extra-ldflags="$ADDI_LDFLAGS " \
+    --extra-cxxflags="-std=c++11 -fno-exceptions -fno-rtti" \
+    --extra-ldflags="$ADDI_LDFLAGS -lc++_shared -lm" \
     $ADDITIONAL_CONFIGURE_FLAG
 
 make clean
