@@ -102,6 +102,7 @@ export NM="${CROSS_COMPILE}nm"
 export STRIP="${CROSS_COMPILE}strip"
 export RANLIB="${CROSS_COMPILE}ranlib"
 
+echo "######################CONFIG######################"
 echo "TOOLNAME_BASE="$TOOLNAME_BASE
 echo "COMPILER_BASE="$COMPILER_BASE
 echo "AOSP_ABI="$AOSP_ABI
@@ -110,3 +111,4 @@ echo "HOST="$HOST
 
 echo "CC=$CC"
 echo "CXX=$CXX"
+echo "######################CONFIG######################"
