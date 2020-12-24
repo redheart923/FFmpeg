@@ -98,9 +98,9 @@ export CXX=$CXX
 export AR="${CROSS_PREFIX}ar"
 export LD="${CROSS_PREFIX}ld"
 export AS="${CROSS_PREFIX}as"
-export NM="${CROSS_COMPILE}nm"
-export STRIP="${CROSS_COMPILE}strip"
-export RANLIB="${CROSS_COMPILE}ranlib"
+export NM="${CROSS_PREFIX}nm"
+export STRIP="${CROSS_PREFIX}strip"
+export RANLIB="${CROSS_PREFIX}ranlib"
 
 echo "######################CONFIG######################"
 echo "TOOLNAME_BASE="$TOOLNAME_BASE

@@ -36,6 +36,12 @@ export PKG_CONFIG_PATH=$OPENSSL_PKG_PATH:$PKG_CONFIG_PATH
 # OPENSSL_CFLAGS="$(pkg-config --cflags openssl)"
 # OPENSSL_LDFLAG="$(pkg-config --libs --static openssl)"
 
+########### libvpx
+VPX_LIBS_DIR=$(pwd)/libvpx/android/$AOSP_ABI
+VPX_PKG_PATH="$VPX_LIBS_DIR/lib/pkgconfig"
+VPX_CONFIG="--enable-libvpx"
+export PKG_CONFIG_PATH=$VPX_PKG_PATH:$PKG_CONFIG_PATH
+
 echo @@@@pkgconfig:$PKG_CONFIG_PATH
 
 function build_android
@@ -55,6 +61,7 @@ echo "Compiling FFmpeg for $CPU and prefix is $PREFIX"
     --enable-libfdk-aac \
     --enable-libx265 \
     --enable-openssl \
+    --enable-libvpx \
     --disable-mediacodec \
     --disable-decoder=h264_mediacodec \
     --disable-static \

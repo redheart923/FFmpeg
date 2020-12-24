@@ -6,3 +6,6 @@
 	path = libx265/x265
 	url = https://github.com/videolan/x265.git
 	branch = stable
+[submodule "libvpx/libvpx"]
+	path = libvpx/libvpx
+	url = https://chromium.googlesource.com/webm/libvpx
